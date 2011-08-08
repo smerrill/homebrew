@@ -8,7 +8,8 @@ class Squid < Formula
   def install
     system "./configure", "--disable-debug", "--disable-dependency-tracking",
                           "--prefix=#{prefix}",
-                          "--localstatedir=#{var}"
+                          "--localstatedir=#{var}",
+                          "--enable-async-io"
     system "make install"
   end
 end
